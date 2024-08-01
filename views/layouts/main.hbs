@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!-- materialize --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    {{!-- font-awesome link cdnjs --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>StoryBooks</title>
+</head>
+<body>
+    {{> _header}}
+    {{> _add_btn}}
+    <div class="container">
+        {{{body}}}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.20.0/full/ckeditor.js"></script>
+
+    <script>
+        //For materialize ui we need to add js script in order to run to it properly
+        M.FormSelect.init(document.querySelector('#status'))
+        M.Sidenav.init(document.querySelector('.sidenav'))
+
+      CKEDITOR.replace('body', {
+        toolbar: [
+            { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'Undo', 'Redo'] },
+            { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript'] },
+            { name: 'paragraph', items: ['NumberedList', 'BulletedList', 'Blockquote'] },
+            { name: 'links', items: ['Link', 'Unlink'] },
+            { name: 'insert', items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar'] },
+            { name: 'styles', items: ['Styles', 'Format', 'Font', 'FontSize'] },
+            { name: 'colors', items: ['TextColor', 'BGColor'] },
+            { name: 'tools', items: ['Maximize', 'ShowBlocks'] }
+        ],
+        //height: 300 // Adjust height as needed
+    });
+
+    </script>
+</body>
+</html>
