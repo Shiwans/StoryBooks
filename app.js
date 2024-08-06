@@ -30,7 +30,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.json())//for json data
 
 
-//method override to use put and delte methods functionalities
+//method override to use put and delete methods functionalities
 app.use(methodOverride(function (req,res){
     if(req.body && typeof req.body === 'object' && '_method' in req.body){
         let method = req.body._method
