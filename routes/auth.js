@@ -27,4 +27,17 @@ router.get('/logout', (req, res, next) => {
     });
 });
 
+//facebook
+//description:-   Auth with facebook
+//route:-  GET /auth/facebook
+//using things that we created in facebook js file
+// router.get('/facebook',passport.authenticate('facebook',{scope:['profile']} ))
+router.get('/facebook',passport.authenticate('facebook'));
+
+//description:-   facebook auth callback
+//route:-  GET /auth/facebook/callback
+router.get('/facebook/callback',passport.authenticate('facebook',{failureRedirect:'/'}),(req,res)=>{
+    res.redirect('/dashboard')
+})
+
 module.exports = router

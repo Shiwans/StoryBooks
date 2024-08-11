@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const UserSchema = new mongoose.Schema({
-    googleId:{
+    Id:{
         type:String,
         required:true
     },
@@ -11,14 +11,18 @@ const UserSchema = new mongoose.Schema({
     },
     firstName:{
         type:String,
-        required:true
+        // required:true
     },
     lastName:{
         type:String,
-        required:true
+        // required:true
     },
     image:{
         type:String,
+    },
+    loginType:{
+        type:String,
+        required:true
     },
     createdAt: {
         type:Date,

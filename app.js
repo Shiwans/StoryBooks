@@ -18,6 +18,7 @@ dotenv.config({path: './config/config.env'})
 
 //passport config
 require('./config/passport')(passport)
+require('./config/facebook')(passport)
 // require('./config/passport')
 
 //calling database function
